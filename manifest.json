@@ -1,0 +1,20 @@
+{
+    "name": "News PWA",
+    "short_name": "News",
+    "descrition": "Berita Dar API CodePolitan",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#F5B5AB",
+    "theme_color": "#F5B5AB",
+    "icons": [{
+            "src": "img/ilkom512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/ilkom192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

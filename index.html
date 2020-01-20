@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <meta name="theme-color" content="#F5B5AB">
+    <meta name="description" content="My first PWA" />
+    <title>Latihanpwa</title>
+</head>
+
+<body>
+    <!-- navigator -->
+    <nav class="teal lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo" id="logo-container">News Reader</a>
+            <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+            <ul class="topnav right hide-on-med-and-down">
+            </ul>
+            <ul class="sidenav" id="nav-mobile">
+            </ul>
+        </div>
+    </nav>
+    <!-- akhir navigator -->
+    <!-- <div class="row" id="articles">
+         meletakkan contant dari API 
+    </div> -->
+    <div id="body-content">
+
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/idb.js"></script>
+    <script src="js/db.js"></script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function () {
+                        console.log("Pendaftaran ServiceWorker berhasil");
+                    })
+                    .catch(function () {
+                        console.log("Pendaftaran ServiceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.");
+        }
+        // akhir pendaftaran sw
+
+        // Memanggil API pertama kali
+
+        document.addEventListener('DOMContentLoaded', () => {
+            getApi();
+        });
+    </script>
+</body>
+
+</html>
