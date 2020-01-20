@@ -1,4 +1,4 @@
-const cache_name = "pwa-v4.7.7"; //deklarasi cache 
+const cache_name = "pwa-v4.7.8"; //deklarasi cache 
 let urlCache = [
     "/index.html",
     "/nav.html",
@@ -6,11 +6,9 @@ let urlCache = [
     "/pages/home.html",
     "/pages/contact.html",
     "/pages/saved.html",
-    "/css/materialize.min.js",
-    "/js/main.js",
+    "/css/materialize.min.css",
     "/js/api.js",
     "/js/nav.js",
-    "/js/materialize.js",
     "/js/materialize.min.js",
     "/js/db.js",
     "/js/idb.js",
@@ -101,7 +99,7 @@ self.addEventListener('activate', (event) => {
             return Promise.all(
                 cacheNames.forEach((cacheName) => { //memetakan isi array dan melakukan sebuah fanction pada setiap isi array  
                     if (cacheName !== cache_name && cacheName.startsWith("pwa-v")) {
-                        console.log("Menghapus Cache")
+                        console.log("Menghapus Cache");
                         return caches.delete(cacheName); //menghapus cache kadarluarsa
                     } else {
                         console.log("gagal menghapus");
